@@ -1,0 +1,18 @@
+.itemDescr {
+  font-size: 14px;
+}
+
+.cross {
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+.itemList {
+  list-style: none;
+}
+
+.listItem {
+  display: flex;
+
+  padding: 5px;
+}

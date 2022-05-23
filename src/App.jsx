@@ -1,31 +1,38 @@
-// import Accordion from "./components/Accordion/Accordion.jsx";
 import { Component } from "react";
-
-import UserForm from "./components/UserForm";
-import UserInfo from "./components/UserInfo";
+import BuyList from "./components/BuyList";
+import ItemForm from "./components/ItemForm";
+import { nanoid } from "nanoid";
 
 class App extends Component {
-  // return (
-  //   <div className="App">
-  //     <div className="container">
-  //       <Accordion />
-  //     </div>
-  //   </div>
-  // );
   state = {
-    name: "",
-    email: "",
-    password: "",
+    items: [],
   };
-  addUser = (data) => {
-    this.setState({ ...data });
+  addItem = (data) => {
+    this.setState(({ items }) => {
+      const newItem = { ...data, id: nanoid() };
+
+      return {
+        items: [...items, newItem],
+      };
+    });
+  };
+  deleteItem = (idx) => {
+    this.setState(({ items }) => {
+      const itemsCopy = items.map((item) => ({ ...item }));
+
+      itemsCopy[idx].deleted = true;
+
+      return {
+        items: itemsCopy,
+      };
+    });
   };
   render() {
     return (
-      <>
-        <UserForm onSubmit={this.addUser} />
-        <UserInfo {...this.state} />
-      </>
+      <div>
+        <ItemForm onSubmit={this.addItem} />
+        <BuyList items={this.state.items} onDelete={this.deleteItem} />
+      </div>
     );
   }
 }
