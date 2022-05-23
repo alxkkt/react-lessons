@@ -1,7 +1,5 @@
 import { Component } from "react";
-import PropTypes from "prop-types";
 
-import styles from "./ItemForm.module.css";
 import { initialState } from "./initialState";
 
 class ItemForm extends Component {

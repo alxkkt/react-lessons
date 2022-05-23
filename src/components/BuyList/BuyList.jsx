@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 import styles from "./BuyList.module.css";
 
 const BuyList = ({ items, onDelete }) => {
