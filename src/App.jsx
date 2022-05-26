@@ -1,11 +1,12 @@
 import { Component } from "react";
-import Albums from "./components/Albums";
+
+import AbilitiesList from "./components/AbilitiesList";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Albums />
+        <AbilitiesList />
       </div>
     );
   }
