@@ -1,0 +1,11 @@
+.navList {
+  list-style: none;
+}
+.navListItem {
+  color: #212121;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.active {
+  color: tomato;
+}
